@@ -10,10 +10,8 @@ const profile = require('./controllers/profile');
 const db = knex({
   client: 'pg',
   connection: {
-    host : 'postgresql-globular-98167',
-    user : 'Jason',
-    password : 'admin',
-    database : 'stut'
+    host : process.env.DATABASE_URL,
+    ssl: true,
   }
 });
 
